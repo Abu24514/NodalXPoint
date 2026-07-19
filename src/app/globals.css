@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0d14;
+  --foreground: #c7cbd1;
+
+  --primary: #2563eb;
+  --secondary: #06b6d4;
+  --accent: #8b5cf6;
+
+  --muted: #64748b;
+
+  --border: rgba(15, 23, 42, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* nodalXpoint premium tokens — "Ink + Brass" */
+  --color-ink: #0a0d14;       /* base background, warm-black */
+  --color-surface: #12151d;   /* cards, panels, mega-menu */
+  --color-brass: #c9a227;     /* single accent — use sparingly */
+  --color-brass-soft: #e4c65a; /* lighter brass for text-on-dark accents */
+  --color-body: #c7cbd1;      /* primary body text on dark */
+  --color-muted-ink: #6b7280; /* secondary/description text on dark */
+  --color-line-ink: rgba(255, 255, 255, 0.08); /* hairline borders on dark */
+
+  /* keep existing light-section tokens as-is */
+  --color-canvas: #ffffff;
+  --color-node: #2f6ff0;
+  --color-pulse: #00d4b5;
+  --color-body-light: #101828;
+  --color-muted: #5b6472;
+  --color-line: #e4e8f0;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.node-grid {
+  background-image: radial-gradient(circle, #2f6ff022 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Hero scroll-cue: a brass line traveling top-to-bottom inside a track */
+@keyframes scroll-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.animate-scroll-line {
+  animation: scroll-line 1.8s ease-in-out infinite;
 }
