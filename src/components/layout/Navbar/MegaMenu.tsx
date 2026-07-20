@@ -48,11 +48,10 @@ export default function MegaMenu({ items }: Props) {
         w-full
         rounded-2xl
         border
-        border-line-ink
+        border-line
         bg-surface
         p-10
-        shadow-2xl
-        backdrop-blur-2xl
+        shadow-[0_24px_70px_-20px_rgba(20,23,31,0.18)]
       "
     >
       <div className="grid grid-cols-2 gap-x-14 gap-y-9">
@@ -67,7 +66,7 @@ export default function MegaMenu({ items }: Props) {
             >
               <Icon
                 size={20}
-                className="mt-1 shrink-0 text-muted-ink transition-colors duration-300 group-hover:text-brass"
+                className="mt-1 shrink-0 text-muted-ink transition-colors duration-300 group-hover:text-node"
               />
 
               <div>
@@ -80,7 +79,7 @@ export default function MegaMenu({ items }: Props) {
                       left-0
                       h-0.5
                       w-0
-                      bg-brass
+                      bg-node
                       transition-all
                       duration-300
                       group-hover:w-full

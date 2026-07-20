@@ -1,35 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0d14;
-  --foreground: #c7cbd1;
-
-  --primary: #2563eb;
-  --secondary: #06b6d4;
-  --accent: #8b5cf6;
-
-  --muted: #64748b;
-
-  --border: rgba(15, 23, 42, 0.08);
+  --background: #faf9f6;
+  --foreground: #14171f;
 }
 
 @theme {
-  /* nodalXpoint premium tokens — "Ink + Brass" */
-  --color-ink: #0a0d14;       /* base background, warm-black */
-  --color-surface: #12151d;   /* cards, panels, mega-menu */
-  --color-brass: #c9a227;     /* single accent — use sparingly */
-  --color-brass-soft: #e4c65a; /* lighter brass for text-on-dark accents */
-  --color-body: #c7cbd1;      /* primary body text on dark */
-  --color-muted-ink: #6b7280; /* secondary/description text on dark */
-  --color-line-ink: rgba(255, 255, 255, 0.08); /* hairline borders on dark */
-
-  /* keep existing light-section tokens as-is */
-  --color-canvas: #ffffff;
-  --color-node: #2f6ff0;
-  --color-pulse: #00d4b5;
-  --color-body-light: #101828;
-  --color-muted: #5b6472;
-  --color-line: #e4e8f0;
+  /* nodalXpoint — "Indigo Signal" light theme
+     Two accents, used deliberately: --color-node (primary brand indigo,
+     buttons/links/underlines) and --color-signal (emerald, reserved for
+     live data points / pulses / the odd number-out). Everything else is
+     ink, warm white, and one hairline gray. */
+  --color-canvas: #faf9f6;      /* page background — warm off-white, not stark #fff */
+  --color-surface: #ffffff;     /* cards, panels, mega-menu, dropdowns */
+  --color-node: #2e3192;        /* primary brand indigo */
+  --color-node-soft: #4b4fcb;   /* lighter indigo — hover / secondary emphasis */
+  --color-signal: #0e9f6e;      /* secondary accent — data points, live figures */
+  --color-body: #14171f;        /* primary text on light bg */
+  --color-muted-ink: #6b7280;   /* secondary / description text */
+  --color-line: #e7e4dd;        /* hairline borders on light bg */
 
   --font-display: var(--font-space-grotesk), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -48,21 +37,21 @@
   }
 
   body {
-    background: var(--background);
-    color: var(--foreground);
+    background: var(--color-canvas);
+    color: var(--color-body);
     overflow-x: hidden;
   }
 }
 
 .node-grid {
-  background-image: radial-gradient(circle, #2f6ff022 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(46, 49, 146, 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 .grid-lines {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(20, 23, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 23, 31, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -83,11 +72,20 @@
   animation: marquee 28s linear infinite;
 }
 
-/* Hero scroll-cue: a brass line traveling top-to-bottom inside a track */
+/* Hero scroll-cue: an indigo line traveling top-to-bottom inside a track */
 @keyframes scroll-line {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
 }
 .animate-scroll-line {
   animation: scroll-line 1.8s ease-in-out infinite;
+}
+
+/* Soft ambient pulse for the signature "nodal point" node */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+.animate-soft-pulse {
+  animation: soft-pulse 2.6s ease-in-out infinite;
 }

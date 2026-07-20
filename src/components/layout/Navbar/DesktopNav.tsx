@@ -23,7 +23,7 @@ export default function DesktopNav() {
       {navigation.map((item, index) => (
         <div
           key={item.title}
-          className="relative"
+          className="group relative"
           onMouseEnter={() => setActiveIndex(index)}
         >
           <Link
@@ -47,7 +47,7 @@ export default function DesktopNav() {
             )}
 
             <span
-              className={`absolute bottom-6 left-0 h-0.5 bg-brass transition-all duration-300
+              className={`absolute bottom-6 left-0 h-0.5 bg-node transition-all duration-300
               ${
                 pathname === item.href
                   ? "w-full"

@@ -7,7 +7,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 flex justify-center border-b border-line-ink bg-ink/90 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 flex justify-center border-b border-line bg-canvas/85 backdrop-blur-lg">
       <div className="flex h-20 w-full max-w-6xl items-center justify-between px-6">
 
         <Logo />
@@ -23,17 +23,17 @@ export default function Navbar() {
               gap-2
               rounded-full
               border
-              border-brass
-              bg-brass
+              border-node
+              bg-node
               px-7
               py-3
               text-sm
               font-semibold
-              text-ink
+              text-white
               transition
               duration-300
               hover:bg-transparent
-              hover:text-brass-soft
+              hover:text-node
               lg:flex
             "
           >
@@ -41,7 +41,7 @@ export default function Navbar() {
             <FiArrowUpRight />
           </button>
 
-          <button className="text-3xl text-body lg:hidden">
+          <button className="text-3xl text-body transition-colors duration-300 hover:text-node lg:hidden">
             <HiOutlineMenuAlt3 />
           </button>
 
