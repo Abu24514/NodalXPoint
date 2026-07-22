@@ -37,7 +37,7 @@ export default function Navbar() {
               lg:flex
             "
           >
-            Contact Us
+            Book a Call
             <FiArrowUpRight />
           </button>
 

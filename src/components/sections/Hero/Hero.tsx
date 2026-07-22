@@ -88,7 +88,7 @@ export default function Hero() {
     <section className="relative w-full overflow-hidden bg-canvas pb-8 pt-16 sm:pt-24">
       <div className="grid-lines absolute inset-0 opacity-70" />
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-[0.10] blur-[110px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-105 w-105 -translate-x-1/2 rounded-full opacity-[0.10] blur-[110px]"
         style={{ background: "var(--color-node)" }}
       />
 
@@ -137,7 +137,7 @@ export default function Hero() {
 
       {/* Interactive service constellation — desktop signature piece */}
       <div className="relative z-10 mx-auto mt-10 hidden max-w-7xl px-6 lg:block">
-        <div className="relative h-[480px] w-full">
+        <div className="relative h-120 w-full">
           <svg
             viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
             preserveAspectRatio="xMidYMid meet"

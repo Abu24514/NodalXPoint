@@ -7,19 +7,17 @@ import Stats from "@/components/sections/stats";
 import Work from "@/components/sections/work";
 import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/cta";
-// import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="bg-canvas">
       <Navbar />
       <Hero />
-      {/* <TechMarquee /> */}
       <Services />
       <Process />
       <Stats />
       <Work />
-      <Testimonials />np
+      <Testimonials />
       <CTA />
       <Footer />
     </main>
