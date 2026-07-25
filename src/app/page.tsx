@@ -1,12 +1,12 @@
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import Hero from "@/components/sections/Hero/Hero";
-import Services from "@/components/sections/service";
-import Process from "@/components/sections/process";
-import Stats from "@/components/sections/stats";
-import Work from "@/components/sections/work";
-import Testimonials from "@/components/sections/Testimonials";
-import CTA from "@/components/sections/cta";
+import Services from "@/components/sections/Home/service";
+import Process from "@/components/sections/Home/process";
+import Stats from "@/components/sections/Home/stats";
+import Work from "@/components/sections/Home/work";
+import Testimonials from "@/components/sections/Home/Testimonials";
+import CTA from "@/components/sections/Home/cta";
 
 export default function Home() {
   return (

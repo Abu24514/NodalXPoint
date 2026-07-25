@@ -174,11 +174,7 @@ export default function MegaMenu({ items }: Props) {
 
           return (
             <div key={item.title} onMouseEnter={() => setActiveIndex(index)}>
-              {hasChildren ? (
-                content
-              ) : (
-                <Link href={item.href}>{content}</Link>
-              )}
+              <Link href={item.href}>{content}</Link>
             </div>
           );
         })}

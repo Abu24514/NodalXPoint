@@ -6,11 +6,6 @@
 }
 
 @theme {
-  /* nodalXpoint — "Indigo Signal" light theme
-     Two accents, used deliberately: --color-node (primary brand indigo,
-     buttons/links/underlines) and --color-signal (emerald, reserved for
-     live data points / pulses / the odd number-out). Everything else is
-     ink, warm white, and one hairline gray. */
   --color-canvas: #faf9f6;      /* page background — warm off-white, not stark #fff */
   --color-surface: #ffffff;     /* cards, panels, mega-menu, dropdowns */
   --color-node: #2e3192;        /* primary brand indigo */

@@ -3,12 +3,12 @@ export type MegaMenuItem = {
   description: string;
   href: string;
   icon: string;
-  children?: MegaMenuItem[]; // 👈 nested flyout ke liye
+  children?: MegaMenuItem[]; 
 };
 
 export type NavItem = {
   title: string;
-  href: string; // 👈 optional mat rakho
+  href: string; 
   megaMenu?: MegaMenuItem[];
 };
 
@@ -20,7 +20,7 @@ export const navigation: NavItem[] = [
 
   {
     title: "About",
-    href: "/about", // 👈 Add
+    href: "/about", 
     megaMenu: [
       {
         title: "Our Story",
@@ -212,8 +212,4 @@ export const navigation: NavItem[] = [
     ],
   },
 
-  {
-    title: "Contact",
-    href: "/contact",
-  },
 ];

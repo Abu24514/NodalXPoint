@@ -1,5 +1,6 @@
-"use client";
 
+
+import Link from "next/link";
 import Logo from "./Logo";
 import DesktopNav from "./DesktopNav";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -16,7 +17,8 @@ export default function Navbar() {
 
         <div className="flex items-center gap-5">
 
-          <button
+          <Link
+            href="/contact"
             className="
               hidden
               items-center
@@ -34,12 +36,12 @@ export default function Navbar() {
               duration-300
               hover:bg-transparent
               hover:text-node
-              lg:flex
+              lg:flex cursor-pointer
             "
           >
-            Book a Call
+            Contact Us
             <FiArrowUpRight />
-          </button>
+          </Link>
 
           <button className="text-3xl text-body transition-colors duration-300 hover:text-node lg:hidden">
             <HiOutlineMenuAlt3 />

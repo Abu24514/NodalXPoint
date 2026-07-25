@@ -111,7 +111,7 @@ export default function Hero() {
           variants={item}
           className="font-display text-3xl font-semibold leading-[1.15] text-body xs:text-4xl sm:text-5xl sm:leading-[1.08] md:text-6xl"
         >
-          The <span className="text-node">nodal point</span> where your business meets technology.
+          The <span className="text-node">nodalXpoint</span> where your business meets technology.
         </motion.h1>
 
         <motion.p
