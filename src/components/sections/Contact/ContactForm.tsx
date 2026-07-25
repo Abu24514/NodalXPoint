@@ -1,30 +1,17 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
+import type React from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
-
-const PROJECT_TYPES = [
-  "Web Development",
-  "Mobile App",
-  "CRM System",
-  "SEO",
-  "AI & ML",
-  "Digital Marketing",
-  "Something else",
-];
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-
-    // TODO: replace with a real API route or email service
-    // (e.g. POST to /api/contact, or a service like Resend / Formspree).
-    // This is intentionally left as a stub — no data is sent anywhere yet.
     await new Promise((resolve) => setTimeout(resolve, 600));
 
     setLoading(false);
@@ -73,7 +60,7 @@ export default function ContactForm() {
             required
             type="email"
             name="email"
-            placeholder="you@company.com"
+            placeholder="john@gmail.com"
             className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-body outline-none transition-colors duration-300 placeholder:text-muted-ink/60 focus:border-node"
           />
         </div>
@@ -81,35 +68,14 @@ export default function ContactForm() {
 
       <div className="mt-5">
         <label className="text-xs font-semibold uppercase tracking-widest text-muted-ink">
-          Company
+          Phone Number
         </label>
         <input
-          type="text"
-          name="company"
-          placeholder="Optional"
+          type="tel"
+          name="phone"
+          placeholder="Your phone number"
           className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-body outline-none transition-colors duration-300 placeholder:text-muted-ink/60 focus:border-node"
         />
-      </div>
-
-      <div className="mt-5">
-        <label className="text-xs font-semibold uppercase tracking-widest text-muted-ink">
-          What do you need help with?
-        </label>
-        <select
-          name="projectType"
-          defaultValue=""
-          required
-          className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-body outline-none transition-colors duration-300 focus:border-node"
-        >
-          <option value="" disabled>
-            Select one
-          </option>
-          {PROJECT_TYPES.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
       </div>
 
       <div className="mt-5">
