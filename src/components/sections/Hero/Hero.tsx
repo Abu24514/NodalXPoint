@@ -6,6 +6,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { FaGlobe, FaMobileAlt, FaUsers, FaChartLine } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { PiSparkleLight } from "react-icons/pi";
+import Link from "next/link";
 
 const HUB = { x: 600, y: 260 };
 
@@ -125,13 +126,13 @@ export default function Hero() {
           variants={item}
           className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:flex-row sm:gap-4"
         >
-          <button className="group flex w-full items-center justify-center gap-2 rounded-full border border-node bg-node px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-transparent hover:text-node sm:w-auto">
+          <Link href="/contact" className="group flex w-full items-center justify-center gap-2 rounded-full border border-node bg-node px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-transparent hover:text-node sm:w-auto">
             Start a Project
             <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
-          <button className="w-full rounded-full border border-line px-7 py-3 text-sm font-semibold text-body transition duration-300 hover:border-node/40 hover:text-node sm:w-auto">
+          </Link>
+          <Link href="/work" className="w-full rounded-full border border-line px-7 py-3 text-sm font-semibold text-body transition duration-300 hover:border-node/40 hover:text-node sm:w-auto">
             See Our Work
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
 

@@ -1,28 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaHandshake, FaBullseye, FaCommentDots, FaSeedling } from "react-icons/fa";
+import {
+  FiZap,
+  FiAward,
+  FiShield,
+  FiUsers,
+  FiTrendingUp,
+} from "react-icons/fi";
 
 const VALUES = [
   {
-    icon: FaBullseye,
-    title: "Ship it right the first time",
-    description: "We'd rather spend an extra day in review than hand over something that breaks in production.",
+    icon: FiZap,
+    title: "Innovation",
+    description: "We embrace modern technologies to build future-ready solutions.",
   },
   {
-    icon: FaCommentDots,
-    title: "Talk in plain language",
-    description: "No jargon-heavy reports. If we can't explain a decision simply, we haven't finished thinking it through.",
+    icon: FiAward,
+    title: "Quality",
+    description: "Every product is crafted with performance, security, and reliability in mind.",
   },
   {
-    icon: FaHandshake,
-    title: "Own the outcome",
-    description: "We measure our work by what it does for your business, not by hours logged or tickets closed.",
+    icon: FiShield,
+    title: "Integrity",
+    description: "We believe in transparency, honesty, and building lasting relationships.",
   },
   {
-    icon: FaSeedling,
-    title: "Build for the long run",
-    description: "Every system we hand over is documented and maintainable — by us, or by whoever comes after us.",
+    icon: FiUsers,
+    title: "Collaboration",
+    description: "We work closely with our clients to turn ideas into successful digital products.",
+  },
+  {
+    icon: FiTrendingUp,
+    title: "Growth",
+    description: "We continuously learn, improve, and innovate to deliver greater value.",
   },
 ];
 
@@ -38,14 +49,14 @@ export default function Values() {
           className="max-w-2xl"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-ink sm:text-xs sm:tracking-[0.25em]">
-            How We Think
+            Core Values
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold leading-tight text-body sm:text-3xl md:text-4xl">
-            A few things we don&apos;t compromise on.
+            The principles behind every project.
           </h2>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((v, i) => {
             const Icon = v.icon;
             return (
@@ -54,7 +65,7 @@ export default function Values() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: (i % 2) * 0.08 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 className="group relative overflow-hidden rounded-2xl border border-line bg-surface p-7"
               >
                 <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-node transition-transform duration-300 group-hover:scale-x-100" />

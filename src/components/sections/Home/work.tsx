@@ -1,11 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 import { PROJECTS } from "@/lib/projects";
+import ProjectCard from "@/components/sections/Home/Projectcard";
+
+const FEATURED_COUNT = 3;
 
 export default function Work() {
+  const featuredProjects = PROJECTS.slice(0, FEATURED_COUNT);
+
   return (
     <section id="work" className="relative w-full bg-canvas py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -24,42 +29,30 @@ export default function Work() {
               Results we can point to, not just deliverables.
             </h2>
           </div>
+
+          <Link
+            href="/work"
+            className="group hidden shrink-0 items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-body transition-all duration-300 hover:border-node hover:text-node sm:flex"
+          >
+            View All Work
+            <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <motion.div
-              key={p.slug}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="h-full"
-            >
-              <Link
-                href={`/work/${p.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface cursor-pointer"
-              >
-                <div className="relative h-44 w-full shrink-0 overflow-hidden">
-                  <div className={`absolute inset-0 bg-linear-to-br ${p.gradient}`} />
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-ink">
-                    {p.tag}
-                  </span>
-                  <h3 className="mt-2 font-display text-lg font-semibold text-body">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-ink">{p.result}</p>
-                </div>
-              </Link>
-            </motion.div>
+          {featuredProjects.map((p, i) => (
+            <ProjectCard key={p.slug} project={p} index={i} />
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center sm:hidden">
+          <Link
+            href="/work"
+            className="group flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-body transition-all duration-300 hover:border-node hover:text-node"
+          >
+            View All Work
+            <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </div>
     </section>

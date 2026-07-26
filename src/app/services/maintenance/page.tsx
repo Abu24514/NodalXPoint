@@ -5,10 +5,10 @@ import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import PageHero from "@/components/common/PageHero";
 import CTA from "@/components/sections/Home/cta";
-import MaintenanceGrid from "@/components/sections/Services/Maintenance/MaintenaceGrid";
 import MaintenanceFlow from "@/components/sections/Services/Maintenance/MaintenceFlow";
 import MaintenanceWhy from "@/components/sections/Services/Maintenance/MaintenceWhy";
 import MaintenanceTech from "@/components/sections/Services/Maintenance/MaintenceTech";
+import MaintenanceGrid from "@/components/sections/Services/Maintenance/MaintenanceGrid";
 
 const DATA = {
   title: "Maintenance & Support",
@@ -22,28 +22,18 @@ export default function MaintenancePage() {
   return (
     <main className="min-h-screen bg-white text-[#0F172A]">
       <Navbar />
-
-      <PageHero
-        defaultConfig={{
-          badge: DATA.badge,
-          title: "Maintenance &",
-          titleHighlight: "Support",
-          subtitle: DATA.tagline,
-          accentGlow: "#2563EB",
-        }}
-      />
+        <PageHero
+              defaultConfig={{
+                badge: "Maintenance & Support",
+                title: "Reliable Support That Grows With ",
+                titleHighlight: "Your Business.",
+                subtitle:
+                  "Launching your project is just the beginning. At NodalXpoint, we provide continuous maintenance, proactive monitoring, and dedicated technical support to ensure your digital products remain secure, high-performing, and ready to evolve with your business needs.",
+                accentGlow: "var(--color-node)",
+              }}
+            />
 
       <section className="mx-auto max-w-6xl space-y-20 px-4 py-14 sm:px-6">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 font-mono text-xs text-slate-500">
-          <Link href="/" className="hover:text-[#2563EB]">Home</Link>
-          <span>/</span>
-          <Link href="/services" className="hover:text-[#2563EB]">Services</Link>
-          <span>/</span>
-          <span className="font-bold text-[#0F172A]">{DATA.title}</span>
-        </nav>
-
-       
         <MaintenanceGrid/>
         <MaintenanceFlow />
         <MaintenanceWhy />

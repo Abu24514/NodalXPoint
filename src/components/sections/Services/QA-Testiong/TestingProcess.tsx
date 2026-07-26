@@ -1,46 +1,112 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "@/components/common/SectionBadge";
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
-const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } };
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
-const TESTING_PROCESS = [
-  { step: "01", title: "Requirement Analysis", desc: "Understanding business goals, technical specs, and compliance needs." },
-  { step: "02", title: "Test Planning", desc: "Defining testing scope, strategy, tools, and resource allocation." },
-  { step: "03", title: "Test Case Design", desc: "Creating detailed manual test cases and automated scripts." },
-  { step: "04", title: "Manual & Automation Testing", desc: "Executing test cycles across multiple environments and devices." },
-  { step: "05", title: "Performance Validation", desc: "Conducting load, stress, and volume testing for scalability." },
-  { step: "06", title: "Security Assessment", desc: "Performing vulnerability scans and penetration testing." },
-  { step: "07", title: "Bug Reporting & Regression", desc: "Logging defects, re-testing fixes, and ensuring stability." },
-  { step: "08", title: "Release Approval", desc: "Providing comprehensive metrics and quality sign-off." },
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const PROCESS = [
+  {
+    step: "01",
+    title: "Discovery & Analysis",
+    desc: "Understand project goals, requirements, user flows, and technical architecture before testing begins.",
+  },
+  {
+    step: "02",
+    title: "Test Strategy",
+    desc: "Create a structured testing plan covering functional, performance, security, and compatibility testing.",
+  },
+  {
+    step: "03",
+    title: "Functional Testing",
+    desc: "Validate every feature, workflow, and user interaction across supported browsers and devices.",
+  },
+  {
+    step: "04",
+    title: "Performance & Security",
+    desc: "Measure application speed, scalability, and identify security vulnerabilities before deployment.",
+  },
+  {
+    step: "05",
+    title: "Bug Resolution",
+    desc: "Track, verify, and retest every issue to ensure a stable and reliable release.",
+  },
+  {
+    step: "06",
+    title: "Production Validation",
+    desc: "Perform final quality checks and approve the application for a confident production launch.",
+  },
 ];
 
 export default function TestingProcess() {
   return (
-    <motion.div 
-      variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-      className="space-y-12 rounded-[2.5rem] bg-slate-900 p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl"
-    >
-      <div className="absolute -top-40 -right-40 w-125 h-125 bg-blue-500/20 rounded-full blur-[100px]"></div>
-      
-      <div className="text-center max-w-3xl mx-auto relative z-10">
-        <h2 className="font-display text-3xl font-bold sm:text-4xl">Our 8-Step Testing Process</h2>
-        <p className="mt-4 text-slate-400 text-lg">A structured, deterministic approach to ensuring software excellence from concept to production.</p>
-      </div>
+    <section className="py-24">
+      <div className="container mx-auto px-4">
 
-      <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-        {TESTING_PROCESS.map((step, idx) => (
-          <motion.div key={idx} variants={fadeUp} className="group relative rounded-3xl bg-slate-800/50 backdrop-blur-md border border-slate-700/50 p-6 hover:bg-slate-800 transition-colors duration-300">
-            <div className="text-5xl font-extrabold text-slate-700/40 absolute top-4 right-4 pointer-events-none group-hover:text-blue-500/20 transition-colors duration-500">
-              {step.step}
-            </div>
-            <div className="h-2 w-12 bg-blue-500 rounded-full mb-6 group-hover:w-full transition-all duration-500"></div>
-            <h4 className="font-bold text-lg text-white relative z-10">{step.title}</h4>
-            <p className="mt-3 text-sm text-slate-400 relative z-10 leading-relaxed">{step.desc}</p>
-          </motion.div>
-        ))}
-      </motion.div>
-    </motion.div>
+        <SectionHeader
+          badge="Our Process"
+          title="How We Ensure"
+          titleHighlight="Software Quality"
+        />
+
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-600"
+        >
+          Our quality assurance process is designed to identify risks early,
+          improve software reliability, and ensure every release is secure,
+          stable, and ready for production.
+        </motion.p>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {PROCESS.map((item) => (
+            <motion.div
+              key={item.step}
+              variants={fadeUp}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl"
+            >
+              <span className="absolute right-6 top-6 text-6xl font-black text-slate-100 transition-colors duration-300 group-hover:text-primary/10">
+                {item.step}
+              </span>
+
+              <div className="mb-6 h-1.5 w-14 rounded-full bg-primary transition-all duration-300 group-hover:w-24" />
+
+              <h3 className="text-xl font-semibold text-slate-900">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 leading-7 text-slate-600">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

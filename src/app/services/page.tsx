@@ -12,6 +12,7 @@ import WhyChooseUs from "@/components/sections/Services/WhyChooseUs";
 import Stats from "@/components/sections/Home/stats";
 import CTA from "@/components/sections/Home/cta";
 import ServiceFaq from "@/components/sections/Services/ServiceFaq";
+import BrochureDownload from "@/components/sections/Services/Brochuredownload ";
 export default function ServicesMainPage() {
   return (
     <main className="bg-canvas min-h-screen text-body">
@@ -33,6 +34,7 @@ export default function ServicesMainPage() {
       <IndustryGrid />
       <WhyChooseUs />
       <Stats />
+      <BrochureDownload/>
       <ServiceFaq/>
       <CTA />
       <Footer />

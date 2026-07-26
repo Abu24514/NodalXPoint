@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function CTA() {
@@ -24,13 +25,19 @@ export default function CTA() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <button className="group flex w-full items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-node transition duration-300 hover:bg-white/90 sm:w-auto">
+            <Link
+              href="/contact"
+              className="group flex w-full items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-node transition duration-300 hover:bg-white/90 sm:w-auto"
+            >
               Start a Project
               <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-            <button className="w-full rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/60 sm:w-auto">
-              Talk to the Team
-            </button>
+            </Link>
+            <Link
+              href="/work"
+              className="w-full rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white text-center transition duration-300 hover:border-white/60 sm:w-auto"
+            >
+              See Our Work
+            </Link>
           </div>
         </div>
       </motion.div>

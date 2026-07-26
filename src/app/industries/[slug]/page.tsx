@@ -37,7 +37,6 @@ export default async function IndustrySubPage({
   return (
     <main className="bg-canvas min-h-screen">
       <Navbar />
-      {/* Slug Pass Karein Dynamic Hero Text aur Floating Cards ke Liye */}
       <IndustriesHero slug={slug} />
       <IndustryDetailView currentSlug={slug} />
       <Footer />
