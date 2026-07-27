@@ -4,8 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { FaGlobe, FaMobileAlt, FaUsers, FaPaintBrush, FaCogs } from "react-icons/fa";
 import { PiSparkleLight } from "react-icons/pi";
+import { BsFillClipboard2DataFill } from "react-icons/bs";
 
 const HUB = { x: 600, y: 260 };
+
 
 const NODES = [
   {
@@ -36,13 +38,13 @@ const NODES = [
     blurb: "Custom CRMs that keep every lead and client in one place.",
   },
   {
-    id: "uiux",
-    label: "UI/UX",
-    icon: FaPaintBrush,
+    id: "data",
+    label: "Data Science",
+    icon: BsFillClipboard2DataFill,
     x: 690,
     y: 436,
     path: "M690,436 C665,370 630,305 600,260",
-    blurb: "Design that's intuitive, on-brand, and easy to use.",
+    blurb: "Data engineering, analytics & insights.",
   },
   {
     id: "ai",
