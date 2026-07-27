@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import PageHero from "@/components/common/PageHero";
@@ -10,13 +8,6 @@ import MaintenanceWhy from "@/components/sections/Services/Maintenance/Maintence
 import MaintenanceTech from "@/components/sections/Services/Maintenance/MaintenceTech";
 import MaintenanceGrid from "@/components/sections/Services/Maintenance/MaintenanceGrid";
 
-const DATA = {
-  title: "Maintenance & Support",
-  tagline: "24/7 System Health, Security Patching & Optimization",
-  description:
-    "Proactive application monitoring, dependency updates, server health checks, and rapid bug fixing to guarantee maximum uptime.",
-  badge: "System Reliability",
-};
 
 export default function MaintenancePage() {
   return (
