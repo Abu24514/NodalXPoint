@@ -41,7 +41,7 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
               {step.step}
             </span>
             <div className="relative z-10">
-              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-node text-xs font-bold text-white">
                 {step.step}
               </div>
               <h4 className="mb-2 text-lg font-bold text-slate-900">{step.title}</h4>

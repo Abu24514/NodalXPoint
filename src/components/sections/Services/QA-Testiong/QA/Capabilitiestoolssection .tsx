@@ -32,7 +32,7 @@ export default function CapabilitiesToolsSection({
               whileHover={{ y: -3 }}
               className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
             >
-              <span className="h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+              <span className="h-2 w-2 shrink-0 rounded-full bg-node" />
               <span className="text-sm font-medium text-slate-700">{cap}</span>
             </motion.div>
           ))}
@@ -54,7 +54,7 @@ export default function CapabilitiesToolsSection({
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm transition-shadow hover:shadow-md"
             >
-              <tool.icon className="text-lg text-blue-600" />
+              <tool.icon className="text-lg text-node" />
               <span className="text-sm font-semibold text-slate-700">{tool.name}</span>
             </motion.div>
           ))}
