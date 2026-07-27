@@ -8,7 +8,7 @@ import Stats from "@/components/sections/Home/stats";
 import PageHero from "@/components/common/PageHero"; 
 import SectionHeader from "@/components/common/SectionBadge"; 
 import MaintenanceTech from "@/components/sections/Services/Maintenance/MaintenceTech"
-import { TECHNOLOGY_SERVICES } from "@/lib/TechnologyData"; 
+import { TECHNOLOGY_SERVICES } from "@/lib/Technology"; 
 import TechnologyFaq from "@/components/sections/Technology/Technologyfaq";
 
 type Slug = keyof typeof TECHNOLOGY_SERVICES;
