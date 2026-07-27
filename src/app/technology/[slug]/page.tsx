@@ -2,122 +2,19 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
-import TechnologyHero from "@/components/sections/Technology/TechnologyHero";
-import TechnologyDetailView from "@/components/sections/Technology/TechnologyDetailView";
+import IndustryGrid from "@/components/sections/Services/IndustryGrid";
+import Stats from "@/components/sections/Home/stats";
 
-const PAGES = {
-  clouds: {
-    title: "Cloud Solutions | nodalXpoint",
-    description: "Empowering your business with scalable, secure, and reliable cloud infrastructure.",
-    data: {
-      title: "Cloud Solutions",
-      tagline: "Empowering your business with scalable, secure, and reliable cloud infrastructure.",
-      description: "Empowering your business with scalable, secure, and reliable cloud infrastructure.",
-      services: [
-        { title: "Cloud Migration", description: "Seamlessly move your workloads to the cloud with minimal downtime and maximum performance." },
-        { title: "Cloud Security", description: "Robust protection and compliance for your data across all cloud environments." },
-        { title: "Infrastructure Management", description: "Automate and monitor cloud infrastructure to ensure optimal efficiency and uptime." },
-        { title: "Performance Optimization", description: "Enhancing application performance through intelligent resource scaling and monitoring." },
-        { title: "Serverless Solutions", description: "Build scalable apps without managing servers — efficient, cost-effective, and fast." },
-        { title: "Cloud DevOps", description: "Streamlining CI/CD pipelines and deployments for continuous integration and delivery." },
-      ],
-      processTitle: "Our Cloud Process",
-      processSubtitle: "Efficient cloud deployment for seamless business operations.",
-      process: ["Requirement Analysis", "Architecture Design", "Deployment & Configuration", "Monitoring & Optimization"],
-      ctaTitle: "Ready to Bring Intelligence to Your Business?",
-      ctaSubtitle: "Let's build AI-powered solutions tailored to your goals.",
-    },
-  },
-  "ai-ml": {
-    title: "AI & Machine Learning | nodalXpoint",
-    description: "Transforming your data into intelligent, automated, and predictive insights using AI and ML.",
-    data: {
-      title: "AI & Machine Learning",
-      tagline: "Transforming your data into intelligent, automated, and predictive insights using AI and ML.",
-      description: "Transforming your data into intelligent, automated, and predictive insights using AI and ML.",
-      services: [
-        { title: "Predictive Analytics", description: "Gain actionable insights with predictive modeling to make data-driven decisions." },
-        { title: "Intelligent Automation", description: "Automate repetitive processes with AI bots to improve efficiency and reduce costs." },
-        { title: "Deep Learning", description: "Utilize neural networks to analyze patterns, images, and natural language at scale." },
-        { title: "Computer Vision", description: "Empowering systems to interpret and understand visual data intelligently." },
-        { title: "NLP Solutions", description: "Enhance customer experience with AI-driven chatbots and sentiment analysis." },
-        { title: "AI Consulting", description: "Strategic guidance for integrating AI into your products and workflows effectively." },
-      ],
-      features: [
-        { title: "Predictive Modeling", description: "Build intelligent models to forecast trends and outcomes." },
-        { title: "Data Analysis", description: "Extract meaningful insights from large datasets efficiently." },
-        { title: "AI Innovation", description: "Leverage AI techniques to optimize processes and decisions." },
-      ],
-      processTitle: "Our AI/ML Process",
-      processSubtitle: "Structured methodology to build intelligent solutions efficiently.",
-      process: ["Data Collection & Cleaning", "Feature Engineering", "Model Training & Evaluation", "Deployment & Monitoring"],
-      ctaTitle: "Ready to Bring Intelligence to Your Business?",
-      ctaSubtitle: "Let's build AI-powered solutions tailored to your goals.",
-    },
-  },
-  "data-science": {
-    title: "Data Science Solutions | nodalXpoint",
-    description: "Transform raw data into actionable insights to power smarter business decisions.",
-    data: {
-      title: "Data Science Solutions",
-      tagline: "Transform raw data into actionable insights to power smarter business decisions.",
-      description: "Transform raw data into actionable insights to power smarter business decisions.",
-      features: [
-        { title: "Predictive Analytics", description: "Gain actionable insights with predictive modeling to make data-driven decisions." },
-        { title: "Machine Learning", description: "Implement intelligent models to automate decisions and predictions." },
-        { title: "Big Data Management", description: "Efficiently process and analyze large datasets for meaningful insights." },
-      ],
-      processTitle: "Our Data Science Process",
-      processSubtitle: "Structured methodology to extract insights efficiently and effectively.",
-      process: ["Data Collection", "Data Cleaning & Processing", "Modeling & Analysis", "Visualization & Reporting"],
-      ctaTitle: "Let's Unlock Your Data Potential",
-      ctaSubtitle: "Partner with us to transform your data into actionable insights and business value.",
-    },
-  },
-  blockchain: {
-    title: "Blockchain Solutions | nodalXpoint",
-    description: "Leverage blockchain technology to create secure, transparent, and decentralized solutions.",
-    data: {
-      title: "Blockchain Solutions",
-      tagline: "Leverage blockchain technology to create secure, transparent, and decentralized solutions.",
-      description: "Leverage blockchain technology to create secure, transparent, and decentralized solutions.",
-      features: [
-        { title: "Secure Transactions", description: "Ensure tamper-proof and encrypted digital transactions." },
-        { title: "Decentralized Network", description: "Eliminate intermediaries and increase transparency with distributed ledgers." },
-        { title: "Smart Contracts", description: "Automate agreements with self-executing smart contracts on blockchain." },
-      ],
-      processTitle: "Our Blockchain Process",
-      processSubtitle: "Structured methodology to implement secure and efficient blockchain solutions.",
-      process: ["Requirement Analysis & Feasibility", "Blockchain Architecture Design", "Development & Deployment", "Monitoring & Optimization"],
-      ctaTitle: "Start Your Blockchain Journey",
-      ctaSubtitle: "Partner with us to build secure, decentralized, and transparent solutions.",
-    },
-  },
-  devops: {
-    title: "DevOps Solutions | nodalXpoint",
-    description: "Streamline development and operations with automation, CI/CD, and cloud efficiency.",
-    data: {
-      title: "DevOps Solutions",
-      tagline: "Streamline development and operations with automation, CI/CD, and cloud efficiency.",
-      description: "Streamline development and operations with automation, CI/CD, and cloud efficiency.",
-      features: [
-        { title: "Continuous Integration", description: "Automate builds and testing to deliver high-quality software faster." },
-        { title: "Continuous Deployment", description: "Seamlessly deploy applications to multiple environments with minimal downtime." },
-        { title: "Infrastructure Automation", description: "Manage and provision infrastructure efficiently using automation tools." },
-      ],
-      processTitle: "Our DevOps Process",
-      processSubtitle: "Structured approach to automate, deploy, and monitor applications efficiently.",
-      process: ["Planning & Requirement Analysis", "CI/CD Pipeline Setup", "Automated Testing & Deployment", "Monitoring & Optimization"],
-      ctaTitle: "Accelerate Your Software Delivery",
-      ctaSubtitle: "Partner with us to implement DevOps best practices and streamline operations.",
-    },
-  },
-} as const;
+import PageHero from "@/components/common/PageHero"; 
+import SectionHeader from "@/components/common/SectionBadge"; 
+import MaintenanceTech from "@/components/sections/Services/Maintenance/MaintenceTech"
+import { TECHNOLOGY_SERVICES } from "@/lib/TechnologyData"; 
+import TechnologyFaq from "@/components/sections/Technology/Technologyfaq";
 
-type Slug = keyof typeof PAGES;
+type Slug = keyof typeof TECHNOLOGY_SERVICES;
 
 export function generateStaticParams() {
-  return Object.keys(PAGES).map((slug) => ({ slug }));
+  return Object.keys(TECHNOLOGY_SERVICES).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -126,10 +23,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  if (!(slug in PAGES)) return {};
+  if (!(slug in TECHNOLOGY_SERVICES)) return {};
   
-  const page = PAGES[slug as Slug];
-  return { title: page.title, description: page.description };
+  const page = TECHNOLOGY_SERVICES[slug as Slug];
+  return { 
+    title: `${page.hero.title} ${page.hero.titleHighlight} | nodalXpoint`, 
+    description: page.hero.subtitle 
+  };
 }
 
 export default async function TechnologySubPage({
@@ -139,17 +39,107 @@ export default async function TechnologySubPage({
 }) {
   const { slug } = await params;
 
-  if (!(slug in PAGES)) {
+  if (!(slug in TECHNOLOGY_SERVICES)) {
     return notFound();
   }
 
-  const page = PAGES[slug as Slug];
+  const page = TECHNOLOGY_SERVICES[slug as Slug];
 
   return (
-    <main className="bg-canvas min-h-screen">
+    <main className="bg-canvas min-h-screen font-body text-body">
       <Navbar />
-      <TechnologyHero slug={slug} />
-      <TechnologyDetailView data={page.data} />
+      
+      <PageHero defaultConfig={page.hero} />
+
+      {page.overview && (
+        <section className="py-20 px-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+            
+              <p className="mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-ink sm:text-xs sm:tracking-[0.25em]">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-node animate-soft-pulse" />
+                Overview
+              </p>
+
+              <h2 className="font-display text-4xl font-extrabold mb-6 tracking-tight text-body">
+                {page.overview.title} <span className="text-node">{page.overview.titleHighlight}</span>
+              </h2>
+              <p className="text-lg text-muted-ink mb-8 leading-relaxed">
+                {page.overview.description}
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {page.overview.tags.map((tag, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-node/10 text-node flex items-center justify-center">
+                      <span className="text-xl font-bold">✓</span>
+                    </div>
+                    <span className="font-semibold text-body">{tag.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <img 
+                src={page.overview.images.primarySrc} 
+                alt={page.overview.title} 
+                className="rounded-3xl shadow-xl w-full object-cover h-112.5" 
+              />
+              {page.overview.floatingStat && (
+                <div className="absolute -bottom-8 -left-8 bg-surface p-5 rounded-2xl shadow-2xl border border-line flex flex-col gap-1 z-10">
+                  <span className="text-sm text-muted-ink font-medium uppercase tracking-wider">
+                    {page.overview.floatingStat.label}
+                  </span>
+                  <span className="font-display text-2xl font-bold text-node">
+                    {page.overview.floatingStat.value}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+    
+      {page.features && (
+        <section className="py-20 px-6 bg-surface grid-lines border-y border-line">
+          <div className="max-w-7xl mx-auto">
+            
+            
+            <div className="mb-16">
+              <SectionHeader 
+                badge="Capabilities"
+                title={page.features.title}
+                titleHighlight={page.features.titleHighlight}
+                subtitle={page.features.description}
+                highlightColorClass="text-node"
+                dotColorClass="bg-node"
+              />
+            </div>
+            
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {page.features.tags.map((tag, index) => (
+                <div 
+                  key={index} 
+                  className="bg-canvas p-8 rounded-3xl shadow-sm border border-line hover:shadow-md hover:border-node/30 transition-all duration-300 flex flex-col items-center text-center group"
+                >
+                  <div className="w-14 h-14 bg-node/10 text-node group-hover:bg-node group-hover:text-surface transition-colors duration-300 rounded-2xl flex items-center justify-center mb-6">
+                    <span className="text-2xl font-bold">✦</span>
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-body">{tag.text}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <IndustryGrid />
+      <Stats />
+      <MaintenanceTech/>
+      <TechnologyFaq/>
       <Footer />
     </main>
   );

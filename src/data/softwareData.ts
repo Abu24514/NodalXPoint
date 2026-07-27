@@ -1,7 +1,5 @@
 import { HeroConfig } from "@/components/common/PageHero";
 
-// DHYAN DEIN: Yahan koi 'react-icons' ka import nahi hoga. 
-// Data file me sirf raw strings (text) hona chahiye.
 
 export interface TechTag {
   text: string;
