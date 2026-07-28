@@ -6,12 +6,10 @@ import {
   FiGlobe,
   FiSmartphone,
   FiLink,
-  FiCloud,
   FiCheckSquare,
   FiTool,
-  FiCpu,
 } from "react-icons/fi";
-import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
+import {  stagger, viewportOnce } from "@/lib/motion";
 import ServiceCard, { ServiceCardData } from "./ServiceCard";
 import SectionHeader from "@/components/common/SectionBadge";
 
@@ -55,6 +53,7 @@ const SERVICES: ServiceCardData[] = [
       "Push notifications & offline sync",
     ],
   },
+  
   {
     title: "API Integration",
     slug: "third-party-implementation",
@@ -66,19 +65,6 @@ const SERVICES: ServiceCardData[] = [
       "CRM & third-party APIs",
       "Webhook & event pipelines",
       "Rate-limit safe architecture",
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    slug: "technology/clouds",
-    badge: "Cloud",
-    icon: FiCloud,
-    desc: "Resilient, auto-scaling infrastructure with automated CI/CD pipelines.",
-    features: [
-      "AWS / Azure / Vercel setup",
-      "CI/CD pipeline automation",
-      "Containerization with Docker",
-      "Infrastructure monitoring",
     ],
   },
   {
@@ -107,24 +93,11 @@ const SERVICES: ServiceCardData[] = [
       "Rapid bug resolution",
     ],
   },
-  {
-    title: "AI & Automation",
-    slug: "technology/ai-ml",
-    badge: "AI",
-    icon: FiCpu,
-    desc: "Generative AI and ML pipelines wired directly into real workflows.",
-    features: [
-      "LLM-powered features",
-      "Workflow automation",
-      "Custom ML pipelines",
-      "AI-assisted internal tooling",
-    ],
-  },
 ];
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-[#faf9f6] py-20 px-4 sm:px-6">
+    <section className="bg-canvas py-20 px-4 sm:px-6">
       <div className="mx-auto max-w-6xl space-y-10">
         <SectionHeader
           badge="Core Services"
@@ -136,7 +109,7 @@ export default function ServicesGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {SERVICES.map((service) => (
             <ServiceCard key={service.slug + service.title} {...service} />
