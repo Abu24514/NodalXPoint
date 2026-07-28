@@ -84,3 +84,6 @@
 .animate-soft-pulse {
   animation: soft-pulse 2.6s ease-in-out infinite;
 }
+::-webkit-scrollbar{
+  display: none;
+}

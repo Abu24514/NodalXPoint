@@ -181,40 +181,6 @@ export default function TechnologyDetailView({ data }: DetailProps) {
           </div>
         </div>
 
-        {/* 4. Action CTA Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-3xl border border-gray-200 bg-white p-8 sm:p-12 text-center shadow-sm"
-        >
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-body">
-            {data.ctaTitle}
-          </h2>
-          <p className="mx-auto mt-2 max-w-xl text-xs sm:text-sm text-gray-500">
-            {data.ctaSubtitle}
-          </p>
-
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-node px-7 py-3.5 text-xs font-bold text-white shadow-md transition-all hover:opacity-90 hover:scale-[1.02]"
-            >
-              Start Tech Project
-              <FiArrowRight size={14} />
-            </Link>
-
-            <a
-              href="/nodal-Brochure.pdf"
-              download="nodalXpoint-Brochure.pdf"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-6 py-3.5 text-xs font-semibold text-body hover:bg-gray-100"
-            >
-              <FiDownload size={14} />
-              Download Spec Sheet
-            </a>
-          </div>
-        </motion.div>
-
       </div>
     </section>
   );

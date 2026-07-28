@@ -31,7 +31,7 @@ export default function OverviewSection({ overview, whoItsFor }: OverviewSection
         className="lg:col-span-5 rounded-3xl bg-slate-50 border border-slate-200 p-8"
       >
         <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <FiTarget className="text-blue-600" /> Ideal For
+          <FiTarget className="text-node" /> Ideal For
         </h3>
         <motion.ul
           variants={stagger}
@@ -46,7 +46,7 @@ export default function OverviewSection({ overview, whoItsFor }: OverviewSection
               variants={fadeUp}
               className="flex items-start gap-3 text-slate-700"
             >
-              <FiCheckCircle className="mt-1 shrink-0 text-blue-600" />
+              <FiCheckCircle className="mt-1 shrink-0 text-node" />
               <span>{item}</span>
             </motion.li>
           ))}

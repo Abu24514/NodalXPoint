@@ -37,7 +37,7 @@ export default function BenefitsSection({ benefits }: BenefitsSectionProps) {
             <motion.div
               whileHover={{ scale: 1.1, rotate: 4 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-blue-600 shadow-sm"
+              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-node shadow-sm"
             >
               <benefit.icon size={28} />
             </motion.div>

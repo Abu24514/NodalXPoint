@@ -4,6 +4,18 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { TECHNOLOGIES } from "@/lib/technologies";
+import { IconType } from "react-icons";
+
+import { FaCloud, FaShieldAlt, FaChartLine, FaGlobe } from "react-icons/fa";
+import { PiSparkleLight } from "react-icons/pi";
+
+const IconMap: Record<string, IconType> = {
+  FaCloud,
+  FaShieldAlt,
+  FaChartLine,
+  FaGlobe,
+  PiSparkleLight,
+};
 
 export default function TechnologyGrid() {
   return (
@@ -11,7 +23,9 @@ export default function TechnologyGrid() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {TECHNOLOGIES.map((tech, i) => {
-            const Icon = tech.icon;
+            // 3. String se actual Icon nikaalein (fallback ke sath)
+            const Icon = IconMap[tech.icon] || FaGlobe;
+            
             return (
               <motion.div
                 key={tech.slug}
@@ -22,9 +36,9 @@ export default function TechnologyGrid() {
               >
                 <Link
                   href={`/technology/${tech.slug}`}
-                  className="group flex items-start gap-4 rounded-2xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-node/40"
+                  className="group flex items-start gap-4 rounded-2xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-node/40 shadow-sm hover:shadow-md"
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-node/10 text-node">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-node/10 text-node transition-colors group-hover:bg-node group-hover:text-white">
                     <Icon size={18} />
                   </span>
 

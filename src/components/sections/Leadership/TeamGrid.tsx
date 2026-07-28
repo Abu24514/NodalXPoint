@@ -22,17 +22,17 @@ const TEAM = [
     bio: "Leads the technology vision, architects scalable solutions, and ensures the delivery of secure, high-performance products.",
     photo: "https://res.cloudinary.com/ax3pwond/image/upload/v1785089731/Screenshot_2026-01-20_183845_akdzav.jpg",
   },
+    {
+    name: "Abhay",
+    role: "Developer",
+    bio: "Develops reliable, scalable, and efficient web applications while maintaining clean code and delivering high-quality solutions.",
+    photo: "https://res.cloudinary.com/ax3pwond/image/upload/v1785090001/595399361_3162525987241359_1996109459266545666_n_1_w738ab.jpg",
+  },
   {
     name: "Arish Azmi",
     role: "Developer & Designer",
     bio: "Combines modern development with intuitive UI/UX design to create fast, engaging, and user-focused digital experiences.",
     photo: "https://res.cloudinary.com/ax3pwond/image/upload/v1785089768/1000062513-removebg-previe_en3lpk.jpg",
-  },
-  {
-    name: "Abhay",
-    role: "Developer",
-    bio: "Develops reliable, scalable, and efficient web applications while maintaining clean code and delivering high-quality solutions.",
-    photo: "https://res.cloudinary.com/ax3pwond/image/upload/v1785090001/595399361_3162525987241359_1996109459266545666_n_1_w738ab.jpg",
   },
   {
     name: "Md Warish",
