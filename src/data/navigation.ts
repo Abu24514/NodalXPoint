@@ -1,16 +1,4 @@
-export type MegaMenuItem = {
-  title: string;
-  description: string;
-  href: string;
-  icon: string;
-  children?: MegaMenuItem[]; 
-};
-
-export type NavItem = {
-  title: string;
-  href: string; 
-  megaMenu?: MegaMenuItem[];
-};
+import type { NavItem } from "@/types/navigation";
 
 export const navigation: NavItem[] = [
   {
@@ -20,7 +8,7 @@ export const navigation: NavItem[] = [
 
   {
     title: "About",
-    href: "/about", 
+    href: "/about",
     megaMenu: [
       {
         title: "Our Story",
@@ -131,13 +119,13 @@ export const navigation: NavItem[] = [
             title: ".NET",
             description: "Scalable .NET applications.",
             href: "/services/software-development/dotnet",
-            icon: "shield",
+            icon: "dotnet",
           },
           {
             title: "UI/UX",
             description: "Design that's intuitive and on-brand.",
             href: "/services/software-development/ui-ux",
-            icon: "users",
+            icon: "figma",
           },
         ],
       },
@@ -168,7 +156,7 @@ export const navigation: NavItem[] = [
       },
       {
         title: "Blockchain",
-        description: "Secure, decentralized blockchain solutions.",
+        description: "Secure decentralized blockchain solutions.",
         href: "/technology/blockchain",
         icon: "shield",
       },
@@ -211,5 +199,4 @@ export const navigation: NavItem[] = [
       },
     ],
   },
-
 ];

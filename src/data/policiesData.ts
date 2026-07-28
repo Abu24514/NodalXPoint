@@ -1,17 +1,7 @@
-export type Clause = {
-  number: string;
-  heading: string;
-  body: string;
-};
-
-export type Policy = {
-  id: string;
-  label: string;
-  summary: string;
-  clauses: Clause[];
-};
+import type { Policy } from "@/types/policy";
 
 export const EFFECTIVE_DATE = "21 July 2026";
+
 export const LAST_REVIEWED = "21 July 2026";
 
 export const policies: Policy[] = [

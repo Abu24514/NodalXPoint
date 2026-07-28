@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS } from "@/data/projects";
 import ProjectCard from "@/components/sections/Home/Projectcard";
 
 const FEATURED_COUNT = 3;

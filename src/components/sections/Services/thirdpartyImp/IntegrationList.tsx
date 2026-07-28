@@ -56,11 +56,11 @@ export default function IntegrationList({ services }: IntegrationListProps) {
       ) : (
         <div ref={trackRef} className="relative">
           {/* static track */}
-          <div className="absolute left-[27px] top-2 bottom-2 w-px bg-line sm:left-[31px]" />
+          <div className="absolute left-6.75 top-2 bottom-2 w-px bg-line sm:left-7.75" />
           {/* animated progress line */}
           <motion.div
             style={{ scaleY: lineScale }}
-            className="absolute left-[27px] top-2 bottom-2 w-px origin-top bg-node sm:left-[31px]"
+            className="absolute left-6.75 top-2 bottom-2 w-px origin-top bg-node sm:left-7.75"
           />
 
           {filtered.map((service, index) => (

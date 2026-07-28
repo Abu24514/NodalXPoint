@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import { TECHNOLOGIES } from "@/lib/technologies";
+import { TECHNOLOGIES } from "@/data/technologies";
 import { IconType } from "react-icons";
 
 import { FaCloud, FaShieldAlt, FaChartLine, FaGlobe } from "react-icons/fa";
@@ -23,7 +23,6 @@ export default function TechnologyGrid() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {TECHNOLOGIES.map((tech, i) => {
-            // 3. String se actual Icon nikaalein (fallback ke sath)
             const Icon = IconMap[tech.icon] || FaGlobe;
             
             return (

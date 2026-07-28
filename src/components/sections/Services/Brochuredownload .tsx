@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiDownload, FiCheck } from "react-icons/fi";
-
-const INCLUDES = [
-  "Full service breakdown",
-  "Tech stack & frameworks",
-  "Industry expertise",
-  "How we engage & deliver",
-];
+import { INCLUDES } from "@/data/brochure";
 
 export default function BrochureDownload() {
   return (
@@ -68,7 +62,7 @@ export default function BrochureDownload() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative mx-auto hidden w-[220px] shrink-0 sm:block"
+              className="relative mx-auto hidden w-55 shrink-0 sm:block"
             >
               <div className="absolute -right-4 -top-4 h-full w-full rounded-xl border border-line bg-canvas" />
               <motion.div
@@ -85,7 +79,7 @@ export default function BrochureDownload() {
                   boxShadow: "0 30px 60px -15px rgba(0,0,0,0.35)",
                 }}
                 style={{ transformStyle: "preserve-3d" }}
-                className="relative flex h-[300px] w-[220px] cursor-pointer flex-col justify-between rounded-xl border border-line bg-node p-5 shadow-xl transition-shadow duration-300"
+                className="relative flex h-75 w-55 cursor-pointer flex-col justify-between rounded-xl border border-line bg-node p-5 shadow-xl transition-shadow duration-300"
               >
                 <div>
                   <p className="font-display text-sm font-bold text-white">

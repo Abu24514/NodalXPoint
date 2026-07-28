@@ -1,91 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaAws } from "react-icons/fa";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiGo,
-  SiPython,
-  SiMongodb,
-  SiPostgresql,
-  SiMysql,
-  SiKubernetes,
-  SiGooglecloud,
-  SiNginx,
-  SiAngular,
-  SiHtml5,
-  SiCss,
-  SiPhp,
-  SiGit,
-  SiGithub,
-  SiBitbucket,
-  SiJira,
-  SiPostman,
-} from "react-icons/si";
-import { RiJavaLine } from "react-icons/ri";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
 import SectionHeader from "@/components/common/SectionBadge";
-const STACK = [
-  {
-    category: "Frontend",
-    items: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "React", icon: SiReact },
-      { name: "Angular", icon: SiAngular },
-      { name: "HTML", icon: SiHtml5 },
-      { name: "CSS", icon: SiCss },
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      { name: "Java", icon: RiJavaLine },
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Python", icon: SiPython },
-      { name: "Go", icon: SiGo },
-      { name: "PHP", icon: SiPhp },
-    ],
-  },
-  {
-    category: "Database & Cache",
-    items: [
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "MySQL", icon: SiMysql },
-    ],
-  },
-  {
-    category: "Cloud & DevOps",
-    items: [
-      { name: "AWS", icon: FaAws },
-      { name: "Kubernetes", icon: SiKubernetes },
-      { name: "Google Cloud", icon: SiGooglecloud },
-      { name: "Nginx", icon: SiNginx },
-    ],
-  },
-  {
-    category: "Tools & Version Control",
-    items: [
-      { name: "Git", icon: SiGit },
-      { name: "GitHub", icon: SiGithub },
-      { name: "Bitbucket", icon: SiBitbucket },
-      { name: "Jira", icon: SiJira },
-      { name: "Postman", icon: SiPostman },
-    ],
-  },
-];
+import { STACK } from "@/data/techStack";
 
 export default function TechnologyStack() {
   return (
     <section className="relative w-full bg-canvas py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 space-y-14">
-        
-        <SectionHeader 
+
+        <SectionHeader
           badge="Enterprise Tech Stack"
           title="Built for scale with "
-           titleHighlight="modern engineering."
+          titleHighlight="modern engineering."
           subtitle="We leverage production-tested frameworks, distributed systems, and modern observability tools to build resilient software."
         />
 

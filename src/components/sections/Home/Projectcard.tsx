@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS } from "@/data/projects";
 
 type Project = (typeof PROJECTS)[number];
 

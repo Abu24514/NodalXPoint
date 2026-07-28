@@ -1,44 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FiUsers,
-  FiRefreshCw,
-  FiMessageCircle,
-  FiTrendingUp,
-} from "react-icons/fi";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
 import SectionHeader from "@/components/common/SectionBadge";
-
-const REASONS = [
-  {
-    icon: FiUsers,
-    title: "Experienced Engineers",
-    desc: "A senior-led team that has shipped production software across industries.",
-  },
-  {
-    icon: FiRefreshCw,
-    title: "Agile Development",
-    desc: "Short, reviewable sprints so you see progress every week, not every quarter.",
-  },
-  {
-    icon: FiMessageCircle,
-    title: "Transparent Communication",
-    desc: "Direct access to your team, clear timelines, no black-box updates.",
-  },
-  {
-    icon: FiTrendingUp,
-    title: "Long-Term Partnership",
-    desc: "We stay on past launch — maintenance, scaling, and the next feature.",
-  },
-];
+import { REASONS } from "@/data/whyChooseUs";
 
 export default function WhyChooseUs() {
   return (
     <section className="relative w-full bg-canvas py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6 space-y-12">
-        
-        <SectionHeader 
+
+        <SectionHeader
           badge="Why Choose Us"
           title="Built to be your long-term"
           titleHighlight="engineering partner."

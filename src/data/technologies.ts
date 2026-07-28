@@ -1,10 +1,10 @@
-// Yahan se react-icons hata diye gaye hain
+
 export type Technology = {
   slug: string;
   title: string;
   tagline: string;
   description: string;
-  icon: string; // Type ko explicitly string kar diya gaya hai
+  icon: string; 
   capabilities: string[];
 };
 
@@ -14,7 +14,7 @@ export const TECHNOLOGIES: Technology[] = [
     title: "Clouds",
     tagline: "AWS, Azure & scalable cloud infrastructure.",
     description: "Architecting resilient, automated cloud infrastructure designed for high availability, security, and global scale.",
-    icon: "FaCloud", // Ab ye string hai
+    icon: "FaCloud", 
     capabilities: ["AWS & Azure Architecture", "Cloud Migration", "Serverless Infrastructure", "Auto-scaling Systems"],
   },
   {
@@ -22,7 +22,7 @@ export const TECHNOLOGIES: Technology[] = [
     title: "AI-ML",
     tagline: "Generative AI & machine learning models.",
     description: "Building intelligent workflows, custom LLMs, and predictive analytics that transform raw data into decision intelligence.",
-    icon: "PiSparkleLight", 
+    icon: "PiSparkleLight",
     capabilities: ["Custom LLM Fine-Tuning", "Predictive Analytics", "NLP Pipelines", "Computer Vision"],
   },
   {

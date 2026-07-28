@@ -1,24 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FiCode,
-  FiGlobe,
-  FiSmartphone,
-  FiCloud,
-  FiCpu,
-  FiCheckSquare,
-} from "react-icons/fi";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
-
-const FEATURES = [
-  { icon: FiCode, title: "Custom Software", desc: "Tailored systems engineered around your exact business logic." },
-  { icon: FiGlobe, title: "Web Development", desc: "Fast, accessible, SEO-friendly web applications at scale." },
-  { icon: FiSmartphone, title: "Mobile Apps", desc: "Native-feel iOS and Android apps from a single codebase." },
-  { icon: FiCloud, title: "Cloud Infrastructure", desc: "Resilient, auto-scaling infrastructure across major providers." },
-  { icon: FiCpu, title: "AI Solutions", desc: "Generative AI and ML pipelines built into real workflows." },
-  { icon: FiCheckSquare, title: "QA Testing", desc: "Automated and manual testing to ship with confidence." },
-];
+import { FEATURES } from "@/data/features";
 
 export default function FeatureGrid() {
   return (

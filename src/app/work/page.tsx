@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Footer from "@/components/layout/Footer/Footer";
 import ProjectCard from "@/components/sections/Home/Projectcard";
-import { PROJECTS } from "@/lib/projects";
+import { PROJECTS } from "@/data/projects";
 
 export default function WorkPage() {
   return (

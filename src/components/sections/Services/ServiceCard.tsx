@@ -2,18 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { fadeUp } from "@/lib/motion";
-
-export type ServiceCardData = {
-  title: string;
-  slug: string;
-  badge: string;
-  desc: string;
-  icon: IconType;
-  features: [string, string, string, string];
-};
+import { ServiceCardData } from "@/types/service";
 
 export default function ServiceCard({ title, slug, badge, desc, icon: Icon, features }: ServiceCardData) {
   return (

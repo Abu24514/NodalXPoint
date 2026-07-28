@@ -1,6 +1,4 @@
-import { IconType } from "react-icons";
 import {
-  FiCheckCircle,
   FiTarget,
   FiUsers,
   FiCode,
@@ -140,7 +138,6 @@ export const QA_SUB_SERVICES: Record<QASubServiceSlug, QASubService> = {
   },
 };
 
-// Small helper so pages don't reach into the record directly
 export function getQASubService(slug: string) {
   return QA_SUB_SERVICES[slug as QASubServiceSlug];
 }
