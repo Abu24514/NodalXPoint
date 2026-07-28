@@ -32,7 +32,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="text-3xl text-body transition-colors duration-300 hover:text-node lg:hidden"
+            className="text-3xl text-body transition-colors duration-300  lg:hidden cursor-pointer"
           >
             <HiOutlineMenuAlt3 />
           </button>

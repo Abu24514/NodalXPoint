@@ -68,7 +68,7 @@ export default function MobileNav({ open, onClose }: Props) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full text-2xl text-body transition-colors duration-300 hover:bg-node/5 hover:text-node"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-2xl text-body transition-colors duration-300 border border-white hover:border-node  cursor-pointer"
               >
                 <HiOutlineX />
               </button>

@@ -61,7 +61,7 @@ export default function Hero() {
             Start a Project
             <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
-          <Link href="/work" className="w-full rounded-full border border-line px-7 py-3 text-sm font-semibold text-body transition duration-300 hover:border-node/40 hover:text-node sm:w-auto">
+          <Link href="/work" className="w-full rounded-full border border-gray-400 px-7 py-3 text-sm font-semibold text-body transition duration-300 hover:border-node/70 hover:text-node sm:w-auto">
             See Our Work
           </Link>
         </motion.div>
